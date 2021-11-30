@@ -1,3 +1,6 @@
-const myName = 'Evren';
+import UI from './ui.js';
 
-export default myName;
+const init = () => {
+  UI.showTasks();
+};
+export default init;

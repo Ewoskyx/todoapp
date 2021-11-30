@@ -4,7 +4,7 @@ module.exports = {
   entry: './src/index.js',
   plugins: [
     new HtmlWebpackPlugin({
-      template: './src/template.html',
+      template: './src/index.html',
     }),
   ],
   module: {
@@ -14,7 +14,7 @@ module.exports = {
         loader: 'html-loader',
       },
       {
-        test: /\.(jpe?g|png|gif|svg)$/i,
+        test: /\.(jpe?g|png|gif|svg|ico)$/i,
         type: 'asset/resource',
       },
     ],

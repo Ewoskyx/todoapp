@@ -1,6 +1,5 @@
 import './main.scss';
 import 'bootstrap';
+import init from './app/app.js';
 
-import myName from './app/app.js';
-
-console.log(myName);
+init();

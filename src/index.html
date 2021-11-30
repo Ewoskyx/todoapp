@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>ToDo App</title>
+  </head>
+  <body>
+    <section>
+      <h1 class="h1">Todo App</h1>
+      <div class="container-fluid">
+        <div
+          class="
+            row
+            d-flex
+            flex-row
+            justify-content-center
+            align-items-center
+            vh-100
+          "
+        >
+          <div
+            class="
+              col-5
+              d-flex
+              flex-column
+              justify-content-start
+              vh-auto
+              dynamicTaskDiv
+            "
+          >
+            <div class="row p-3 taskHeader  d-flex justify-content-between">
+              <div class="col">Today's To Do</div>
+              <button class="col-1 btn-reload"></button>
+            </div>
+            <div class="row p-3 inputTask d-flex justify-content-between">
+              <input
+                class="col"
+                type="text"
+                placeholder="Add to your list..."
+              />
+
+              <button class="col-1 btn-enter test"></button>
+            </div>
+            <div class="row taskFooter text-center"><a href="#">Clear all completed tasks</a></div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </body>
+</html>
