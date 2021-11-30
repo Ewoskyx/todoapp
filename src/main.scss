@@ -4,6 +4,7 @@
 .test {
   border: 1px solid green;
 }
+
 body {
   background-color: $minimalist-bg;
 }
@@ -11,9 +12,8 @@ body {
 .dynamicTaskDiv {
   position: relative;
   background-color: $simpleWhite;
-  -webkit-box-shadow: 0px 10px 13px -7px #000000,
-    5px 5px 15px 5px rgba(0, 0, 0, 0);
-  box-shadow: 0px 10px 13px -7px #000000, 5px 5px 15px 5px rgba(0, 0, 0, 0);
+  -webkit-box-shadow: 0 10px 13px -7px #000, 5px 5px 15px 5px rgba(0, 0, 0, 0);
+  box-shadow: 0 10px 13px -7px #000, 5px 5px 15px 5px rgba(0, 0, 0, 0);
 }
 
 .taskHeader {
@@ -22,9 +22,11 @@ body {
 
 .inputTask {
   border-bottom: 1px solid $lightOne;
+
   input {
     border: none;
     outline: none;
+
     &::placeholder {
       font-style: italic;
     }
@@ -34,43 +36,39 @@ body {
 .task-main {
   background-color: $simpleWhite;
   border-bottom: 1px solid $lightOne;
+
   .checkbox {
     width: 12px;
     height: 24px;
-    border-radius: 0%;
-    border:2px solid $lightThree;
+    border: 2px solid $lightThree;
     border-radius: 18%;
     cursor: pointer;
+
     &:checked + .task-desc {
       color: $lightThree;
       font-style: italic;
       text-decoration: line-through;
     }
-    
   }
-  
+
   .checkbox:checked,
   .checkbox:active {
     outline: transparent;
     background-color: transparent;
-    border-color: transparent ;
+    border-color: transparent;
     color: $darkOne;
     box-shadow: none;
     background-image: url(./images/check-mark.png);
     background-position: center;
     background-repeat: no-repeat;
     background-size: contain;
-    
   }
 
   .checkbox:focus {
     outline: none;
     box-shadow: none;
-    border-color: none;
+    border-color: transparent;
   }
-  
-  
-  
 }
 
 .btn-enter,
@@ -85,6 +83,7 @@ body {
   width: 12px;
   height: 12px;
 }
+
 .btn-enter {
   background-image: url(./images/enter.png);
 }
@@ -101,10 +100,9 @@ body {
 .taskFooter {
   padding: 12px;
   background-color: $minimalist-bg;
+
   a {
     text-decoration: none;
     color: $darkOne;
   }
 }
-
-
