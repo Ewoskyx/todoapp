@@ -1,8 +1,108 @@
-$danger: #333;
-
 @import "~bootstrap/scss/bootstrap";
+@import "./styles/colors";
+
+.test {
+  border: 1px solid green;
+}
 
 body {
-  color: teal;
-  text-align: center;
+  background-color: $minimalist-bg;
+}
+
+.dynamicTaskDiv {
+  position: relative;
+  background-color: $simpleWhite;
+  -webkit-box-shadow: 0 10px 13px -7px #000, 5px 5px 15px 5px rgba(0, 0, 0, 0);
+  box-shadow: 0 10px 13px -7px #000, 5px 5px 15px 5px rgba(0, 0, 0, 0);
+}
+
+.taskHeader {
+  border-bottom: 1px solid $lightOne;
+}
+
+.inputTask {
+  border-bottom: 1px solid $lightOne;
+
+  input {
+    border: none;
+    outline: none;
+
+    &::placeholder {
+      font-style: italic;
+    }
+  }
+}
+
+.task-main {
+  background-color: $simpleWhite;
+  border-bottom: 1px solid $lightOne;
+
+  .checkbox {
+    width: 12px;
+    height: 24px;
+    border: 2px solid $lightThree;
+    border-radius: 18%;
+    cursor: pointer;
+
+    &:checked + .task-desc {
+      color: $lightThree;
+      font-style: italic;
+      text-decoration: line-through;
+    }
+  }
+
+  .checkbox:checked,
+  .checkbox:active {
+    outline: transparent;
+    background-color: transparent;
+    border-color: transparent;
+    color: $darkOne;
+    box-shadow: none;
+    background-image: url(./images/check-mark.png);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: contain;
+  }
+
+  .checkbox:focus {
+    outline: none;
+    box-shadow: none;
+    border-color: transparent;
+  }
+}
+
+.btn-enter,
+.btn-dots,
+.btn-reload {
+  background-position: center;
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-color: transparent;
+  border: none;
+  outline: none;
+  width: 12px;
+  height: 12px;
+}
+
+.btn-enter {
+  background-image: url(./images/enter.png);
+}
+
+.btn-dots {
+  background-image: url(./images/more.png);
+  transform: rotate(90deg);
+}
+
+.btn-reload {
+  background-image: url(./images/reload.png);
+}
+
+.taskFooter {
+  padding: 12px;
+  background-color: $minimalist-bg;
+
+  a {
+    text-decoration: none;
+    color: $darkOne;
+  }
 }
