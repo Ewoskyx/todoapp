@@ -4,11 +4,11 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>ToDo App</title>
+    <title>To Do App</title>
   </head>
   <body>
-    <section>
-      <h1 class="h1">Todo App</h1>
+    <section class="text-center">
+      <h6 class="h6 d-inline-block p-3">To Do App</h6>
       <div class="container-fluid">
         <div
           class="
@@ -17,10 +17,10 @@
             flex-row
             justify-content-center
             align-items-center
-            vh-100
+            
           "
         >
-          <div
+          <form
             class="
               col-5
               d-flex
@@ -30,21 +30,23 @@
               dynamicTaskDiv
             "
           >
-            <div class="row p-3 taskHeader  d-flex justify-content-between">
+            <div class="row p-3 taskHeader d-flex justify-content-between">
               <div class="col">Today's To Do</div>
-              <button class="col-1 btn-reload"></button>
+              <button type="submit" class="col-1 btn-reload"></button>
             </div>
             <div class="row p-3 inputTask d-flex justify-content-between">
               <input
-                class="col"
+                class="col task-input"
                 type="text"
                 placeholder="Add to your list..."
               />
 
-              <button class="col-1 btn-enter test"></button>
+              <button class="col-1 btn-enter test" type="submit"></button>
             </div>
-            <div class="row taskFooter text-center"><a href="#">Clear all completed tasks</a></div>
-          </div>
+            <div class="row taskFooter text-center">
+              <a href="#">Clear all completed tasks</a>
+            </div>
+          </form>
         </div>
       </div>
     </section>
