@@ -1,5 +1,45 @@
 import './main.scss';
 import 'bootstrap';
-import init from './app/app.js';
+import Task from './app/task.js';
+import Store from './app/store.js';
+import UI from './app/ui.js';
 
-init();
+// Show TASK
+UI.showTasks();
+const form = document.querySelector('.dynamicTaskDiv');
+const newTask = document.querySelector('.task-input');
+const taskFooter = document.querySelector('.taskFooter');
+
+// Add TASK
+const add = () => {
+  let counter = 1;
+  const taskArray = JSON.parse(localStorage.getItem('tasks'));
+  if (taskArray !== null) {
+    counter = taskArray.length + 1;
+  }
+
+  if (newTask.value === '') {
+    UI.clearInput();
+  } else {
+    const task = new Task(newTask.value, counter);
+
+    UI.addTask(task);
+    Store.addToStore(task);
+    UI.clearInput();
+  }
+};
+
+form.addEventListener('submit', add);
+form.addEventListener('keyup', (e) => {
+  if (e.keyCode === 13) {
+    add();
+  }
+});
+
+// Delete TASK
+taskFooter.addEventListener('click', () => {
+  UI.clearTask();
+  Store.deleteFromStore();
+  // eslint-disable-next-line no-restricted-globals
+  location.reload();
+});

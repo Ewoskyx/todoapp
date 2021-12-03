@@ -37,6 +37,21 @@ body {
   background-color: $simpleWhite;
   border-bottom: 1px solid $lightOne;
 
+  .task-desc {
+    border-color: transparent;
+    outline: transparent;
+    resize: none;
+    text-indent: 2%;
+    text-align: left;
+    padding-top: 24px;
+
+    &:focus {
+      border-color: transparent;
+      outline: transparent;
+      background-color: $taskOnChange;
+    }
+  }
+
   .checkbox {
     width: 12px;
     height: 24px;
@@ -67,7 +82,6 @@ body {
   .checkbox:focus {
     outline: none;
     box-shadow: none;
-    border-color: transparent;
   }
 }
 
@@ -86,6 +100,7 @@ body {
 
 .btn-enter {
   background-image: url(./images/enter.png);
+  transform: scale(0.8);
 }
 
 .btn-dots {
@@ -95,6 +110,11 @@ body {
 
 .btn-reload {
   background-image: url(./images/reload.png);
+  transition: all 300ms ease-in-out;
+
+  &:hover {
+    transform: rotate(360deg);
+  }
 }
 
 .taskFooter {

@@ -1,34 +1,39 @@
-import data from './taskdata.js';
+import Store from './store.js';
 
 const dynamicDiv = document.querySelector('.dynamicTaskDiv');
 const taskFooter = document.querySelector('.taskFooter');
 
 class UI {
   static addTask(task) {
+    // Create elements
     const divCheck = document.createElement('div');
     const checkBox = document.createElement('input');
-    const contentP = document.createElement('span');
+    const contentP = document.createElement('textarea');
     const dotsIcon = document.createElement('button');
-    divCheck.className = 'form-check task-main row d-flex align-items-center justify-content-around p-3 ms-3';
+    // Classnames & Id's & attributes
+    divCheck.className = 'form-check task-main row d-flex align-items-center justify-content-around p-1 ms-3';
     checkBox.className = 'form-check-input checkbox col-2';
+    checkBox.id = `${task.index}`;
     checkBox.type = 'checkbox';
     checkBox.checked = `${task.isCompleted ? 'checked' : ''}`;
+    checkBox.addEventListener('change', Store.updateStatus);
     contentP.className = 'task-desc col';
-    contentP.innerText = `${task.description}`;
+    contentP.id = 'task-desc';
+    contentP.innerHTML = `${task.description}`;
+    contentP.addEventListener('change', Store.updateToStore);
+
     dotsIcon.className = 'btn-dots col-1';
-    dotsIcon.id = `${task.index}`;
+    // Propagate at DOM
     divCheck.append(checkBox, contentP, dotsIcon);
     dynamicDiv.insertBefore(divCheck, taskFooter);
   }
 
   static showTasks() {
-    for (let i = 0; i < data.length; i += 1) {
-      UI.addTask(data[i]);
-    }
+    const tasks = Store.getFromStore();
+    tasks.forEach((task) => {
+      UI.addTask(task);
+    });
   }
-  // TODO:
-
-  static updateTask() {}
 
   static clearTask() {
     const checkboxes = document.querySelectorAll('.checkbox');
@@ -39,6 +44,11 @@ class UI {
       }
     });
   }
+
+  static clearInput() {
+    const newTask = document.querySelector('.task-input');
+    newTask.value = '';
+  }
 }
-taskFooter.addEventListener('click', UI.clearTask);
+
 export default UI;

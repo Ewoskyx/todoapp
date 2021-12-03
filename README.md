@@ -1,28 +1,28 @@
 ![](https://img.shields.io/badge/Microverse-blueviolet)
 
-# Neverland Rockfest 2021 Project
+# To-Do App Project
 
-> Evren Ersoy  Neverland Rockfest 2021 project. A demo website for an imaginary 
-Rock festival!
+> Evren Ersoy  To-Do App project. An app for add-remove-update tasks
 
-![screenshot desktop home](./nrf-1.PNG)<br />
-![screenshot mobile lineup](./nrf-2.PNG)<br />
-![screenshot desktop about](./nrf-3.PNG)<br />
+![screenshot blank](./td-1.PNG)<br />
+![screenshot added tasks](./td-2.PNG)<br />
+![screenshot checked tasks](./td-3.PNG)<br />
 
 Additional description about the project and its features.
 
 ## Built With
 
 - HTML5 
-- CSS3
+- SCSS
 - Javascript
 - Bootstrap 5
+- Webpack 5
 
 
 ## Live Demo
 
 You can check the link below for the live demo.
-https://ewoskyx.github.io/rockfest/
+https://ewoskyx.github.io/todoapp/
 
 
 ## Getting Started
@@ -54,8 +54,8 @@ Give a ⭐️ if you like this project!
 
 ## Acknowledgments
 
-- Original design idea by Cindy Shin in Behance
-https://www.behance.net/adagio07
+- Original design idea by minimalist project
+https://web.archive.org/web/20180320194056/http://www.getminimalist.com:80/
 
 ## 📝 License
 This project is [MIT](./MIT.md) licensed.
