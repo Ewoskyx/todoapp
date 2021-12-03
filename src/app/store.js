@@ -1,4 +1,3 @@
-/* eslint-disable no-useless-return */
 import Task from './task.js';
 
 class Store {
@@ -31,8 +30,6 @@ class Store {
       }
     });
     localStorage.setItem('tasks', JSON.stringify(tasks));
-    // eslint-disable-next-line no-restricted-globals
-    location.reload();
   }
 
   static updateStatus(e) {

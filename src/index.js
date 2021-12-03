@@ -40,6 +40,11 @@ form.addEventListener('keyup', (e) => {
 taskFooter.addEventListener('click', () => {
   UI.clearTask();
   Store.deleteFromStore();
-  // eslint-disable-next-line no-restricted-globals
-  location.reload();
+  UI.reloadUI();
+  UI.showTasks();
 });
+
+// Drag&Drop
+UI.reloadUI();
+UI.showTasks();
+UI.dragOver();
