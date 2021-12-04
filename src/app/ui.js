@@ -26,6 +26,11 @@ class UI {
     contentP.addEventListener('change', Store.updateToStore);
 
     dotsIcon.className = 'btn-dots col-1';
+    dotsIcon.addEventListener('click', (e) => {
+      Store.deleteSelected(e);
+      UI.reloadUI();
+      UI.showTasks();
+    });
     // Propagate at DOM
     divCheck.append(checkBox, contentP, dotsIcon);
     dynamicDiv.insertBefore(divCheck, taskFooter);

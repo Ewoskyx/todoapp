@@ -49,5 +49,15 @@ class Store {
     });
     localStorage.setItem('tasks', JSON.stringify(newTasks));
   }
+
+  static deleteSelected(e) {
+    const tasks = JSON.parse(localStorage.getItem('tasks'));
+    const { id } = e.target.parentElement.firstChild;
+    const newTasks = tasks.filter((task) => task.index !== Number(id));
+    newTasks.forEach((task, i) => {
+      task.index = i + 1;
+    });
+    localStorage.setItem('tasks', JSON.stringify(newTasks));
+  }
 }
 export default Store;

@@ -36,7 +36,7 @@ form.addEventListener('keyup', (e) => {
   }
 });
 
-// Delete TASK
+// Delete selected TASK/TASKS
 taskFooter.addEventListener('click', () => {
   UI.clearTask();
   Store.deleteFromStore();
