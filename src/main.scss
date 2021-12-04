@@ -36,6 +36,14 @@ body {
 .task-main {
   background-color: $simpleWhite;
   border-bottom: 1px solid $lightOne;
+  cursor: move;
+  transition: all 300ms ease-in-out;
+
+  &.drag {
+    opacity: 0.5;
+    transform: scale(1.1);
+    border: 1px solid $lightThree;
+  }
 
   .task-desc {
     border-color: transparent;
@@ -53,7 +61,7 @@ body {
   }
 
   .checkbox {
-    width: 12px;
+    width: 24px;
     height: 24px;
     border: 2px solid $lightThree;
     border-radius: 18%;

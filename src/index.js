@@ -36,10 +36,15 @@ form.addEventListener('keyup', (e) => {
   }
 });
 
-// Delete TASK
+// Delete selected TASK/TASKS
 taskFooter.addEventListener('click', () => {
   UI.clearTask();
   Store.deleteFromStore();
-  // eslint-disable-next-line no-restricted-globals
-  location.reload();
+  UI.reloadUI();
+  UI.showTasks();
 });
+
+// Drag&Drop
+UI.reloadUI();
+UI.showTasks();
+UI.dragOver();

@@ -1,4 +1,3 @@
-/* eslint-disable no-useless-return */
 import Task from './task.js';
 
 class Store {
@@ -31,8 +30,6 @@ class Store {
       }
     });
     localStorage.setItem('tasks', JSON.stringify(tasks));
-    // eslint-disable-next-line no-restricted-globals
-    location.reload();
   }
 
   static updateStatus(e) {
@@ -47,6 +44,16 @@ class Store {
   static deleteFromStore() {
     const tasks = JSON.parse(localStorage.getItem('tasks'));
     const newTasks = tasks.filter((task) => task.isCompleted === false);
+    newTasks.forEach((task, i) => {
+      task.index = i + 1;
+    });
+    localStorage.setItem('tasks', JSON.stringify(newTasks));
+  }
+
+  static deleteSelected(e) {
+    const tasks = JSON.parse(localStorage.getItem('tasks'));
+    const { id } = e.target.parentElement.firstChild;
+    const newTasks = tasks.filter((task) => task.index !== Number(id));
     newTasks.forEach((task, i) => {
       task.index = i + 1;
     });
